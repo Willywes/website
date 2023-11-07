@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="One Piece Logo">
+  <div
+    style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column;"
+  >
+    <div class="container">
+      <img src="/public/onepiece.png" alt="Logo" width="300" height="300" />
+      <div class="logo">
+        <div class="head">
+          <div class="hat">
+            <div class="band"></div>
+            <div class="rim"></div>
+          </div>
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="mouth"></div>
+          </div>
+          <div class="jaw">
+            <div class="teeth"></div>
+            <div class="chin"></div>
+          </div>
+        </div>
+        <div class="bone"></div>
+        <div class="bone"></div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    filter: grayscale(100%);
+    z-index: 0;
+  }
+  .container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: black;
+  }
+
+  .logo {
+    opacity: 0.75;
+  }
+
+  .head {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 3px black;
+
+    .hat {
+      position: absolute;
+      top: -5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: yellow;
+      border-radius: 120px 120px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px black;
+
+      .band {
+        position: absolute;
+        top: 140%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 120px;
+        background: black;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 0 0 3px black;
+      }
+
+      .rim {
+        position: absolute;
+        top: 140%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 120px;
+        height: 120px;
+        background: red;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: 0 0 0 3px black;
+      }
+    }
+  }
+</style>

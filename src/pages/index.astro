@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/layouts/Navbar.astro";
+import Welcome from "../components/sections/Welcome.astro";
+import SocialNetworks from "../components/sections/SocialNetworks.astro";
+import WhoIAm from "../components/sections/WhoIAm.astro";
+---
+
+<Layout title="👋 Hi, welcome to my website">
+  <header>
+    <Navbar />
+  </header>
+  <main>
+    <Welcome />
+    <WhoIAm />
+  </main>
+  <SocialNetworks />
+</Layout>
+
+<style lang="scss">
+  body {
+    header {
+      grid-area: header;
+      // margin: 0 auto;
+      position: fixed;
+      width: 100%;
+      backdrop-filter: blur(7px);
+      z-index: 100;
+      min-height: 5rem;
+      // background: #12182e65;
+    }
+    main {
+      grid-area: main;
+      // min-height: 200vh;
+      margin-bottom: 4rem;
+      // margin: 0 auto;
+    }
+
+    aside {
+      position: relative;
+      &.left-aside {
+        grid-area: left-aside;
+      }
+
+      &.right-aside {
+        grid-area: right-aside;
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "header"
+        "main"
+        "left-aside";
+    }
+  }
+</style>

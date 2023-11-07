@@ -1,0 +1,60 @@
+<nav class="container">
+  <a href="/" title="Home">
+    <img src="logo.svg" alt="logo" class="logo" />
+  </a>
+  <ul>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="/about">About</a>
+    </li>
+
+    <li>
+      <a href="/contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<style lang="scss">
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    .logo {
+      height: 2rem;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      gap: 2rem;
+      li {
+        a {
+          text-decoration: none;
+          color: var(--text-color);
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 1px var(--primary-color);
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      ul {
+        margin-top: 1rem;
+        li {
+          margin-left: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+</style>

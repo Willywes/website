@@ -1,0 +1,133 @@
+<div class="social-networks">
+  <a target="_blank" href="https://www.linkedin.com/in/willywes/">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-brand-linkedin"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+      ></path>
+      <path d="M8 11l0 5"></path>
+      <path d="M8 8l0 .01"></path>
+      <path d="M12 16l0 -5"></path>
+      <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+    </svg>
+  </a>
+
+  <a target="_blank" href="https://github.com/willywes">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-brand-github"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+      ></path>
+    </svg>
+  </a>
+
+  <a target="_blank" href="https://es.stackoverflow.com/users/2500/willywes">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-brand-stackoverflow"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 17v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-1"></path>
+      <path d="M8 16h8"></path>
+      <path d="M8.322 12.582l7.956 .836"></path>
+      <path d="M8.787 9.168l7.826 1.664"></path>
+      <path d="M10.096 5.764l7.608 2.472"></path>
+    </svg>
+  </a>
+
+  <a target="_blank" href="https://open.spotify.com/user/willywescl">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-brand-spotify"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+      <path d="M8 11.973c2.5 -1.473 5.5 -.973 7.5 .527"></path>
+      <path d="M9 15c1.5 -1 4 -1 5 .5"></path>
+      <path d="M7 9c2 -1 6 -2 10 .5"></path>
+    </svg>
+  </a>
+</div>
+
+<style lang="scss">
+  .social-networks {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    // align-items: start;
+    padding: 1rem;
+    position: fixed;
+    height: 100vh;
+    gap: 1rem;
+    bottom: 2rem;
+    z-index: 10;
+
+    svg {
+      stroke: var(--text-color);
+      fill: none;
+      //   opacity: 0.8;
+      transition: all 0.2s ease-in-out;
+    }
+
+    a:hover svg {
+      opacity: 1;
+      transform: scale(1.2);
+      stroke: var(--primary-color);
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      width: 100%;
+      gap: 2rem;
+      bottom: 0;
+      padding: 1rem 0;
+      background-color: var(--bg-color);
+      position: relative;
+
+      svg {
+        scale: 1.5;
+      }
+    }
+  }
+</style>
