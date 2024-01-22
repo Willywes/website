@@ -1,0 +1,50 @@
+---
+import GithubIcon from "../components/GithubIcon.astro";
+import LinkButton from "../components/LinkButton.astro";
+import LinkedInIcon from "../components/LinkedInIcon.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Hello World">
+	<main class="container container-xl mx-auto">
+		<div
+			class="min-h-screen p-6 flex flex-col-reverse md:grid md:grid-cols-2 items-center gap-12"
+		>
+			<div class="flex flex-col gap-12">
+				<h1 class="text-5xl sm:text-7xl font-bold">
+					Hi 🖖, I'm <span class="text-yellow-500">Alejandro</span><br
+					/> a full stack web developer.
+				</h1>
+				<p class="text-lg">
+					I'm a software engineer based in Chile. I'm currently
+					working at my own projects and freelancing. If you want to
+					work with me, feel free to contact me.
+				</p>
+				<div class="flex gap-4">
+					<LinkButton
+						href="https://www.linkedin.com/in/willywes/"
+						title="Contact me on LinkedIn"
+					>
+						<LinkedInIcon />
+						LinkedIn
+					</LinkButton>
+					<LinkButton
+						href="https://github.com/willywes"
+						title="Contact me on Github"
+					>
+						<GithubIcon /> Github
+					</LinkButton>
+				</div>
+			</div>
+			<div class="flex justify-end">
+				<img
+					class="rounded-full cover bg-yellow-500 shadow-xl border-4 border-yellow-500"
+					src="/me.png"
+					alt="Alejandro Isla"
+				/>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style></style>
