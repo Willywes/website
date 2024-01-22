@@ -1,36 +1,12 @@
 ---
-import GithubIcon from "../components/icons/GithubIcon.astro";
-import LinkButton from "../components/LinkButton.astro";
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import WhatIHaveLearned from "../components/sections/WhatIHaveLearned.astro";
 import Home from "../components/sections/Home.astro";
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Layout title="Alejandro Isla | Full Stack Developer">
-	<header class="backdrop-blur-sm fixed top-0 left-0 right-0 z-10 py-6">
-		<div class="container container-xl mx-auto px-6">
-			<nav>
-				<ul class="flex gap-8 items-center justify-end">
-					<li
-						class="hover:text-yellow-500 transition-colors duration-300"
-					>
-						<a href="/">Home</a>
-					</li>
-					<li
-						class="hover:text-yellow-500 transition-colors duration-300"
-					>
-						<a href="#what-i-have-learned">What I have learned</a>
-					</li>
-					<li
-						class="hover:text-yellow-500 transition-colors duration-300"
-					>
-						<a href="#what-i-do">What I do</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+	<Header />
 	<main class="container container-xl mx-auto">
 		<Home />
 		<WhatIHaveLearned />

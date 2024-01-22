@@ -1,14 +1,79 @@
 ---
-import Section from "../Section.astro";
+const logos = [
+    "astro",
+    "bootstrap",
+    "css",
+    "django",
+    "electron",
+    "expressjs",
+    "graphql",
+    "html5",
+    "javascript",
+    "jquery",
+    "kotlin",
+    "laravel",
+    "mysql",
+    "nextjs",
+    "nodejs",
+    "php",
+    "postgresql",
+    "python",
+    "react",
+    "sass",
+    "solidjs",
+    "supabase",
+    "tailwindcss",
+    "typescript",
+    "vue",
+    "zod",
+];
+
+// Lenguajes
+const langs = ["javascript", "typescript", "python", "php", "kotlin"];
+
+const backendFrameworks = ["django", "expressjs", "laravel", "nodejs", "php"];
+// Frameworks
+const FrontFrameworks = [
+    "astro",
+    "bootstrap",
+    "nextjs",
+    "react",
+    "solidjs",
+    "supabase",
+    "tailwindcss",
+    "vue",
+];
+
+// Bases de datos
+const databases = ["mysql", "postgresql", "supabase", "mariadb"];
+
+// Herramientas
+const tools = ["electron", "graphql", "jquery", "zod"];
 ---
 
-<Section id="what-i-have-learned">
-    <div class="flex flex-col gap-6 justify-end">
-        <h2 class="text-4xl sm:text-6xl font-bold">About my work</h2>
-        <p>
-            I'm a full stack web developer with a passion for building
-            beautiful, functional, and accessible websites. I'm currently
-            working at my own projects and freelancing.
+<section id="what-i-have-learned" class="min-h-screen py-12 md:py-24">
+    <div class="flex flex-col gap-12 text-center">
+        <h2 class="text-4xl
+        sm:text-6xl
+        font-bold">
+            What I've learned
+        </h2>
+        <p class="w-full max-w-xl mx-auto text-lg">
+            I'm learning new things every day. I'm always looking for new
+            challenges and opportunities to grow as a developer. This are some
+            of the things I've learned so far.
         </p>
+
+        <div class="flex flex-wrap justify-center gap-12">
+            {
+                logos.map((logo) => (
+                    <img
+                        src={`/logos/${logo}.svg`}
+                        alt={logo}
+                        class="inline-block w-12 h-12 sm:w-16 sm:h-16"
+                    />
+                ))
+            }
+        </div>
     </div>
-</Section>
+</section>
