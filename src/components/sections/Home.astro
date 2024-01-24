@@ -43,7 +43,7 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro";
         </div>
         <div class="flex justify-center md:justify-end p-6 lg:p-12">
             <div
-                class="me rounded-full bg-yellow-500 shadow-xl border-2 border-yellow-500 w-10/12 md:w-full lg:w-10/12"
+                class="me rounded-full bg-yellow-500 shadow-xl border-2 border-yellow-500"
             >
                 <img
                     class="rounded-full cover"
@@ -82,7 +82,7 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro";
         image.style.transform = `perspective(1000px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
         image.style.scale = `1.1`;
         image.style.transition = `scale 0.05s ease-in-out`;
-        image.style.filter = `brightness(1)`;
+        // image.style.filter = `brightness(1)`;
 
         img.style.transform = `perspective(1000px) scale(1.05) rotateX(${-yRotation}deg) rotateY(${-xRotation}deg) translate(0, -7%)`;
         img.style.transition = `all 0.1s ease-in-out`;
@@ -96,11 +96,12 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro";
     const reset = () => {
         image.style.transform = `translate(0, 0)`;
         image.style.scale = `1`;
-        image.style.filter = `brightness(0.9)`;
+        // image.style.filter = `brightness(0.9)`;
 
         img.style.transform = `translate(0, 0)`;
         img.style.backgroundColor = `transparent`;
         img.style.boxShadow = `none`;
+        img.style.backdropFilter = `none`;
     };
 
     image.addEventListener("mouseleave", reset);
