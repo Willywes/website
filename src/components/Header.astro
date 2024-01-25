@@ -1,25 +1,194 @@
 <header>
-    <div
-        class="backdrop-blur-sm fixed top-0 left-0 right-0 z-10 py-6 container container-xl mx-auto px-6"
-    >
-        <nav>
-            <ul class="flex gap-8 items-center justify-end">
-                <li
-                    class="hover:text-yellow-500 transition-colors duration-300"
-                >
-                    <a href="/">Home</a>
+    <div>
+        <nav class="navbar p-12 lg:max-w-fit">
+            <ul class="grid gap-6 text-3xl lg:text-4xl text-end">
+                <li>
+                    <a
+                        class="hover:text-yellow-500 transition-colors duration-300"
+                        href="/">Home</a
+                    >
                 </li>
-                <li
-                    class="hover:text-yellow-500 transition-colors duration-300"
-                >
-                    <a href="#what-i-have-learned">What I have learned</a>
+                <li>
+                    <a
+                        class="hover:text-yellow-500 transition-colors duration-300"
+                        href="#what-i-have-learned">What I have learned</a
+                    >
                 </li>
-                <li
-                    class="hover:text-yellow-500 transition-colors duration-300"
-                >
-                    <a href="#what-i-do">What I do</a>
+                <li>
+                    <a
+                        class="hover:text-yellow-500 transition-colors duration-300"
+                        href="#what-i-do">What I do</a
+                    >
                 </li>
             </ul>
         </nav>
     </div>
+    <button
+        class="navbar-toggle fixed bottom-6 right-6 w-12 p-3 flex rounded-full z-20 group/navbar-toggle bg-yellow-500 hover:bg-yellow-600"
+    >
+        <div class="icon-menu">
+            <div
+                class="bar bg-slate-200 group-hover/navbar-toggle:bg-slate-100"
+            >
+            </div>
+            <div
+                class="bar bg-slate-200 group-hover/navbar-toggle:bg-slate-100"
+            >
+            </div>
+            <div
+                class="bar bg-slate-200 group-hover/navbar-toggle:bg-slate-100"
+            >
+            </div>
+        </div>
+    </button>
 </header>
+
+<style lang="scss">
+    .navbar {
+        background-color: rgba(2, 6, 23, 0.75);
+        backdrop-filter: blur(2rem);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: 0.5s;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    .navbar-toggle {
+        display: flex;
+        transform: translateX(0);
+
+        .bar:nth-child(1) {
+            animation: top-bar-reverse 0.5s cubic-bezier(0.5, 0.2, 0.2, 1.01)
+                forwards;
+        }
+
+        .bar:nth-child(2) {
+            animation: middle-bar-reverse 0.5s cubic-bezier(0.5, 0.2, 0.2, 1.01)
+                forwards;
+        }
+
+        .bar:nth-child(3) {
+            animation: bottom-bar-reverse 0.5s cubic-bezier(0.5, 0.2, 0.2, 1.01)
+                forwards;
+        }
+
+        &.active {
+            .bar:nth-child(1) {
+                animation: top-bar 0.5s cubic-bezier(0.5, 0.2, 0.2, 1.01)
+                    forwards;
+            }
+
+            .bar:nth-child(2) {
+                animation: middle-bar 0.5s cubic-bezier(0.5, 0.2, 0.2, 1.01)
+                    forwards;
+            }
+
+            .bar:nth-child(3) {
+                animation: bottom-bar 0.5s cubic-bezier(0.5, 0.2, 0.2, 1.01)
+                    forwards;
+            }
+        }
+    }
+
+    .icon-menu {
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+
+        .bar {
+            height: 2px;
+            width: 100%;
+            display: block;
+            margin: 5px auto;
+            position: relative;
+            border-radius: 10px;
+        }
+    }
+
+    @keyframes top-bar {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(7px) rotate(-45deg);
+        }
+    }
+
+    @keyframes middle-bar {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(100px);
+        }
+    }
+
+    @keyframes bottom-bar {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-7px) rotate(45deg);
+        }
+    }
+
+    @keyframes top-bar-reverse {
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        0% {
+            transform: translateY(7px) rotate(-45deg);
+        }
+    }
+
+    @keyframes middle-bar-reverse {
+        100% {
+            transform: translateX(0);
+        }
+        0% {
+            transform: translateX(100px);
+        }
+    }
+
+    @keyframes bottom-bar-reverse {
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        0% {
+            transform: translateY(-7px) rotate(45deg);
+        }
+    }
+</style>
+
+<script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const navToggle = document.querySelector(".navbar-toggle");
+
+    navToggle?.addEventListener("click", () => {
+        navToggle?.classList.toggle("active");
+        navbar?.classList.toggle("open");
+        body?.classList.toggle("overflow-hidden");
+    });
+
+    const navLinks = document.querySelectorAll(".navbar ul li a");
+
+    navLinks?.forEach((link) => {
+        link.addEventListener("click", () => {
+            navToggle?.classList.toggle("active");
+            navbar?.classList.toggle("open");
+            body?.classList.toggle("overflow-hidden");
+        });
+    });
+</script>
