@@ -62,8 +62,10 @@ const tools = ["electron", "graphql", "jquery", "zod"];
             </p>
         </div>
 
-        <div class="grid gap-12">
-            <div class="grid gap-6 text-center max-w-xl mx-auto">
+        <div
+            class="flex flex-shrink items-center justify-center gap-12 max-w-4xl mx-auto"
+        >
+            <div class="basis-1/2 grid gap-6">
                 <h2 class="text-3xl sm:text-4xl font-bold">Languages</h2>
                 <p class="w-full text-lg">
                     I've learned a few languages, but I'm always looking to
@@ -71,13 +73,13 @@ const tools = ["electron", "graphql", "jquery", "zod"];
                     to learn Rust in the future.
                 </p>
             </div>
-            <div class="flex flex-wrap justify-center gap-12">
+            <div class="basis-1/2 flex flex-wrap justify-center gap-12">
                 {
                     langs.map((lang) => (
                         <img
                             src={`/logos/${lang}.svg`}
                             alt={lang}
-                            class="inline-block w-12 h-12 sm:w-16 sm:h-16"
+                            class="brand-logo inline-block w-12 h-12 sm:w-16 sm:h-16 transform hover:scale-110 transition-all duration-300 ease-in-out"
                         />
                     ))
                 }
@@ -99,7 +101,7 @@ const tools = ["electron", "graphql", "jquery", "zod"];
                         <img
                             src={`/logos/${lang}.svg`}
                             alt={lang}
-                            class="inline-block w-12 h-12 sm:w-16 sm:h-16"
+                            class="brand-logo inline-block w-12 h-12 sm:w-16 sm:h-16 transform hover:scale-110 transition-all duration-300 ease-in-out"
                         />
                     ))
                 }
@@ -107,3 +109,86 @@ const tools = ["electron", "graphql", "jquery", "zod"];
         </div>
     </div>
 </section>
+
+<style lang="scss" is:inline>
+    #bg-canva {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 0;
+        overflow: hidden;
+        opacity: 0;
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        &.fade-logo {
+            animation: fadeInLogo 0.5s ease-in-out forwards;
+        }
+
+        &:not(.fade-logo) {
+            animation: fadeOutLogo 1s ease-in-out forwards;
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fadeInLogo {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0.05;
+        }
+    }
+
+    @keyframes fadeOutLogo {
+        0% {
+            opacity: 0.05;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
+
+<script>
+    const brandLogos = document.querySelectorAll(".brand-logo");
+    const body = document.querySelector("body");
+
+    const newElement = document.createElement("div");
+    newElement.id = "bg-canva";
+
+    body?.prepend(newElement);
+
+    brandLogos.forEach((logo) => {
+        logo.addEventListener("mouseenter", () => {
+            const src = logo.getAttribute("src")?.split("/")[2].split(".")[0];
+            const element = document.getElementById("bg-canva");
+            element?.classList.add("fade-logo");
+            element?.style.setProperty(
+                "background-image",
+                `url(/logos/${src}.svg)`,
+            );
+        });
+
+        logo.addEventListener("mouseleave", () => {
+            const element = document.getElementById("bg-canva");
+            element?.classList.remove("fade-logo");
+        });
+    });
+</script>

@@ -11,9 +11,14 @@ export default {
 					'75%': { transform: ' rotate(10deg)' },
 					'100%': { transform: 'rotate(-10deg)' },
 				},
+				fadeIn: {
+					'0%': { opacity: 0 },
+					'100%': { opacity: 1 },
+				},
 			},
 			animation: {
 				'handWave': 'handWave 2s ease-in-out infinite',
+				'fadeIn': 'fadeIn 1s ease-in-out',
 			},
 		},
 	},
