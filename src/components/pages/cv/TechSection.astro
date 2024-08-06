@@ -1,0 +1,14 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h3 class="uppercase text-lg font-bold dark:text-slate-50 text-slate-800 mb-4">
+  {title}
+</h3>
+<div class="grid grid-cols-[repeat(auto-fill,4.5rem)] gap-4 mb-8">
+  <slot />
+</div>

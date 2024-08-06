@@ -6,7 +6,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<div class="section-cv text-slate-800">
+<div class="cv-section">
   <h2>{title}</h2>
   <slot />
 </div>
@@ -23,7 +23,7 @@ const { title } = Astro.props;
     text-transform: uppercase;
     font-family: "Big Shoulders Display", sans-serif;
   }
-  .section-cv p {
+  .cv-section p {
     margin-bottom: 2rem !important;
   }
 </style>

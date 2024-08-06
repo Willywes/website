@@ -1,18 +1,15 @@
 ---
-import SectionCV from "../SectionCV.astro";
+import SectionCV from "../CVSection.astro";
+
+const years = new Date().getFullYear() - 2011;
+
+const text = [
+  `He trabajado durante ${years} años en el desarrollo de páginas y aplicaciones web, enfocándome en aplicaciones de gestión, comercio electrónico y portales web.`,
+  `A lo largo de mi trayectoria, he tenido la oportunidad de colaborar en distintos tipos de proyectos, liderar equipos de trabajo y gestionar proyectos de desarrollo de software.`,
+  `Me considero una persona proactiva, con capacidad para trabajar en equipo y adaptarme a distintos entornos de trabajo. Me gusta aprender y mejorar mis habilidades técnicas y personales.`,
+];
 ---
 
 <SectionCV title="Presentación">
-  <p class="mb-4 text-lg">
-    I have been working more than 15 years in the IT industry, developing
-    software and leading development teams.
-  </p>
-  <p class="mb-4 text-lg">
-    I have experience in the development of web applications, mobile
-    applications, and desktop applications.
-  </p>
-  <p class="mb-4 text-lg">
-    I have experience in the development of web applications, mobile
-    applications, and desktop applications.
-  </p>
+  {text.map((paragraph) => <p class="mb-4 text-lg">{paragraph}</p>)}
 </SectionCV>
