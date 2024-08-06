@@ -1,15 +1,119 @@
 ---
 import SectionCV from "../CVSection.astro";
 
-const years = new Date().getFullYear() - 2011;
-
-const text = [
-  `He trabajado durante ${years} años en el desarrollo de páginas y aplicaciones web, enfocándome en aplicaciones de gestión, comercio electrónico y portales web.`,
-  `A lo largo de mi trayectoria, he tenido la oportunidad de colaborar en distintos tipos de proyectos, liderar equipos de trabajo y gestionar proyectos de desarrollo de software.`,
-  `Me considero una persona proactiva, con capacidad para trabajar en equipo y adaptarme a distintos entornos de trabajo. Me gusta aprender y mejorar mis habilidades técnicas y personales.`,
+const experiences = [
+  {
+    company: "Freelance",
+    date: "ene 2011 - actualidad",
+    logo: "/companies/freelance.jpg",
+    items: [
+      {
+        date: "ene 2011 - actualidad",
+        title: "Desarrollo de aplicaciones web y móviles",
+        description: [
+          "Desde el año 2011 he trabajado como desarrollador de software freelance. Durante este tiempo he desarrollado una gran variedad de proyectos para clientes de todo el mundo. He trabajado en proyectos de desarrollo web, desarrollo móvil y desarrollo de aplicaciones de escritorio.",
+          "He trabajado con tecnologías como PHP, JavaScript, Java, C#, Python, Kotlin, entre otras. He trabajado con frameworks como Laravel, Symfony, CodeIgniter, React, Angular, Vue, Flutter, entre otros. He trabajado con bases de datos como MySQL, PostgreSQL, MongoDB, SQLite, entre otras. He trabajado con sistemas operativos como Linux, Windows, Mac OS, Android, iOS, entre otros.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Devlabs",
+    date: "sept 2022 - jun 2023",
+    logo: "/companies/devlabs.jpeg",
+    items: [
+      {
+        date: "sept 2022 - jun 2023",
+        title: "Director Ejecutivo",
+        description: [
+          "Mi principal labor como CEO de devlabs fue buscar constantemente nuevas formas de innovar y mejorar nuestros productos y servicios a través del uso de tecnología de vanguardia.",
+          "También me encargo de liderar y motivar a nuestro equipo de desarrolladores para que alcancen sus metas y objetivos profesionales. Me siento altamente comprometido con el éxito de devlabs y estoy siempre buscando nuevas oportunidades para hacer crecer la empresa y mejorar la experiencia de nuestros clientes.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Innovaweb",
+    date: "feb 2018 - sept 2022",
+    logo: "/companies/innovaweb.jpeg",
+    items: [
+      {
+        date: "jul 2021 - sept 2022",
+        title: "Arquitecto de software",
+        description: [
+          "Como Arquitecto de software en Innovaweb, fui responsable de diseñar e implementar soluciones de arquitectura de software utilizando herramientas como Next.js, React.js, Laravel y AWS.",
+          "También tengo experiencia en el enfoque de Diseño de Dominio del Controlador (DDD) y mi labor era mantenerme actualizado en las últimas tendencias y tecnologías en el área.",
+        ],
+      },
+      {
+        date: "ene 2019 - sept 2022",
+        title: "Director de proyectos TI",
+        description: [
+          "Como Director de proyectos en Innovaweb, he sido responsable de dirigir y desarrollar equipos de trabajo y liderar la implementación de metodologías ágiles. Además, he tenido experiencia en la gestión ágil de proyectos y he sido Scrum Master en distintos proyectos.",
+          "Mi objetivo principal es ayudar a mis equipos a alcanzar sus metas y objetivos a través de la promoción del liderazgo y la colaboración.",
+        ],
+      },
+      {
+        date: "feb 2018 - sept 2022",
+        title: "Desarrollador Web",
+        description: [
+          "Como Desarrollador Web en Innovaweb, una empresa de tecnología con sede en Chile, he tenido la oportunidad de trabajar en una amplia variedad de proyectos utilizando distintas tecnologías como Laravel, PHP, React.js, MySQL, HTML, CSS y Git.",
+          "También he participe en proyectos que utilizan metodologías ágiles como Scrum.",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Want",
+    date: "oct 2017 - feb. 2019",
+    logo: "/companies/want.jpeg",
+    items: [
+      {
+        date: "oct 2017 - feb. 2019",
+        title: "Desarrollador de software",
+        description: [
+          "Como Desarrollador Web y Móvil en Want Agencia de Diseño, una empresa de diseño y tecnología con sede en Viña del Mar, Chile, tuve la oportunidad de aplicar mis habilidades y conocimientos en proyectos web y móviles utilizando una variedad de tecnologías como Laravel, Wordpress, React.js, React Native y Angular.",
+        ],
+      },
+    ],
+  },
 ];
 ---
 
 <SectionCV title="Experiencias">
-  {text.map((paragraph) => <p class="mb-4 text-xl font-light">{paragraph}</p>)}
+  {
+    experiences.map((experience, index) => (
+      <div class="grid grid-flow-col gap-6 border-b mb-6">
+        <div class="w-8 h-8 md:w-24 md:h-24 bg-slate-300">
+          <img
+            src={experience.logo}
+            alt={experience.company}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="border-l" />
+        <div>
+          <h3 class="text-xl font-bold mb-3 uppercase">
+            {experience.company}{" "}
+            <span class="font-semibold text-sm">({experience.date})</span>
+          </h3>
+          <div>
+            {experience.items.map((item, index) => (
+              <div class="mb-6">
+                <h4 class="text-lg font-bold mb-0">{item.title}</h4>
+                <p class="text-sm font-semibold text-slate-500 mb-3">
+                  {item.date}
+                </p>
+                <div class="space-y-2">
+                  {item.description.map((description, index) => (
+                    <p>{description}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
 </SectionCV>
