@@ -1,0 +1,66 @@
+---
+import SectionCV from "../CVSection.astro";
+import BrandCard from "../BrandCard.astro";
+import TechSection from "../TechSection.astro";
+
+const sections = [
+  {
+    title: "Lenguajes de Programación",
+    brands: [
+      { name: "JavaScript", icon: "/logos/javascript.svg" },
+      { name: "TypeScript", icon: "/logos/typescript.svg" },
+      { name: "PHP", icon: "/logos/php.svg" },
+      { name: "Python", icon: "/logos/python.svg" },
+      { name: "Kotlin", icon: "/logos/kotlin.svg" },
+      { name: "HTML5", icon: "/logos/html5.svg" },
+      { name: "CSS3", icon: "/logos/css3.svg" },
+    ],
+  },
+  {
+    title: "Frameworks y Librerías",
+    brands: [
+      { name: "Next.js", icon: "/logos/nextjs.svg" },
+      { name: "Laravel", icon: "/logos/laravel.svg" },
+      { name: "React", icon: "/logos/react.svg" },
+      { name: "Astro", icon: "/logos/astro.svg" },
+      { name: "SolidJS", icon: "/logos/solidjs.svg" },
+      { name: "Vue.js", icon: "/logos/vue.svg" },
+      { name: "Electron", icon: "/logos/electron.svg" },
+      { name: "Django", icon: "/logos/django.svg" },
+      { name: "jQuery", icon: "/logos/jquery.svg" },
+      { name: "SAAS", icon: "/logos/sass.svg" },
+      { name: "Tailwind", icon: "/logos/tailwindcss.svg" },
+      { name: "Bootstrap", icon: "/logos/bootstrap.svg" },
+    ],
+  },
+  {
+    title: "Base de datos",
+    brands: [
+      { name: "MySQL", icon: "/logos/mysql.svg" },
+      { name: "PostgreSQL", icon: "/logos/postgresql.svg" },
+      { name: "GraphQL", icon: "/logos/graphql.svg" },
+      { name: "Supabase", icon: "/logos/supabase.svg" },
+    ],
+  },
+  {
+    title: "Herramientas y Otros",
+    brands: [
+      { name: "Git", icon: "/logos/git.svg" },
+      { name: "GitHub", icon: "/logos/github.svg" },
+      { name: "WordPress", icon: "/logos/wordpress.svg" },
+    ],
+  },
+];
+---
+
+<SectionCV title="Tecnologías y Herramientas">
+  {
+    sections.map(({ title, brands }) => (
+      <TechSection title={title}>
+        {brands.map(({ name, icon }) => (
+          <BrandCard name={name} icon={icon} />
+        ))}
+      </TechSection>
+    ))
+  }
+</SectionCV>

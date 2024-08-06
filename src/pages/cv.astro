@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IntroCard from "../components/pages/cv/IntroCard.astro";
+import Presentation from "../components/pages/cv/sections/Presentation.astro";
+import TechAndTools from "../components/pages/cv/sections/TechAndTools.astro";
+import Abilities from "../components/pages/cv/sections/Abilities.astro";
+import Experiencies from "../components/pages/cv/sections/Experiencies.astro";
+---
+
+<Layout title="Alejandro Isla | Curriculum Vitae">
+  <main class="max-w-[1024px] mx-auto p-6">
+    <IntroCard />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 py-6">
+      <div class="grid gap-10">
+        <Presentation />
+        <Abilities />
+      </div>
+      <div class="grid gap-10">
+        <TechAndTools />
+      </div>
+
+      <div class="md:col-span-2">
+        <Experiencies />
+      </div>
+      <!-- 
+      <div class="md:col-span-2">
+        <Experiencies />
+      </div> -->
+    </div>
+  </main>
+</Layout>

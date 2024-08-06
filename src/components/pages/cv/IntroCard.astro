@@ -1,0 +1,44 @@
+---
+import GithubIcon from "../../icons/GithubIcon.astro";
+import LinkedInIcon from "../../icons/LinkedInIcon.astro";
+import XIcon from "../../icons/XIcon.astro";
+---
+
+<section id="intro" class="flex py-16">
+  <div class="flex flex-col md:flex-row gap-12 mx-auto items-center">
+    <div class="bg-slate-200 bg-opacity-90 rounded-full w-60 h-60">
+      <img class="rounded-full cover" src="/me.png" alt="Alejandro Isla" />
+    </div>
+    <div class="my-auto">
+      <h1 class="text-4xl font-bold text-center md:text-left mb-2">
+        Alejandro Isla
+      </h1>
+      <h2 class="text-xl text-center md:text-left uppercase">
+        Desarrollador Full Stack
+      </h2>
+      <div class="flex pt-6 gap-6 justify-center md:justify-start">
+        <a
+          href="https://github.com/willywes"
+          title="Contact me on Github"
+          class="hover:text-slate-700 hover:scale-[105%] transition-transform"
+        >
+          <GithubIcon />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/willywes/"
+          title="Contact me on LinkedIn"
+          class="hover:text-slate-700 hover:scale-[105%] transition-transform"
+        >
+          <LinkedInIcon />
+        </a>
+        <a
+          href="https://x.com/willywes_"
+          title="Contact me on X"
+          class="hover:text-slate-700 hover:scale-[105%] transition-transform"
+        >
+          <XIcon />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

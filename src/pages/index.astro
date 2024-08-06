@@ -1,17 +1,15 @@
 ---
-import WhatIHaveLearned from "../components/sections/WhatIHaveLearned.astro";
-import Home from "../components/sections/Home.astro";
+import Welcome from "../components/pages/home/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 ---
 
-<Layout title="Alejandro Isla | Full Stack Developer">
-	<!-- <Header /> -->
-	<main class="container container-xl mx-auto">
-		<Home />
-		<!-- <WhatIHaveLearned /> -->
-	</main>
-	<!-- <footer>
+<Layout>
+  <!-- <Header /> -->
+  <main class="container container-xl mx-auto px-6">
+    <Welcome />
+    <!-- <WhatIHaveLearned /> -->
+  </main>
+  <!-- <footer>
 		<div class="container container-xl mx-auto py-6"></div>
 	</footer> -->
 </Layout>
