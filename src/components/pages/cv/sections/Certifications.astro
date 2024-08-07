@@ -1,0 +1,126 @@
+---
+import SectionCV from "../CVSection.astro";
+
+const certificactions = [
+  {
+    company: "CertJoin",
+    date: "2021",
+    logo: "/companies/certjoin.jpeg",
+    items: [
+      {
+        date: "nov 2021",
+        title: "Scrum Master Certified Expert",
+        description: [
+          "Aprendí como liderar equipos de desarrollo de software utilizando la metodología ágil Scrum. También aprendí como aplicar los principios de Scrum y como mejorar la productividad de los equipos de trabajo.",
+        ],
+        credential: {
+          id: "nkFh5hyPX",
+          link: "https://certjoin.com/campus/mod/customcert/verify_certificate.php",
+        },
+      },
+      {
+        date: "nov 2021",
+        title: "Scrum Product Owner Certified Expert",
+        description: [
+          "Aprendí los fundamentos de Scrum y como aplicarlos desde la perspectiva del Product Owner. También aprendí como potenciar el valor del producto y enfocarme en las necesidades más importantes del cliente.",
+        ],
+        credential: {
+          id: "MQ4F0FrkMe",
+          link: "https://certjoin.com/campus/mod/customcert/verify_certificate.php",
+        },
+      },
+    ],
+  },
+  {
+    company: "Google Actívate",
+    date: "2021",
+    logo: "/companies/google-activate.jpeg",
+    items: [
+      {
+        date: "abr 2021",
+        title: "Desarrollo de App Móviles",
+        description: [
+          "Aprendí a desarrollar aplicaciones móviles para Android utilizando Kotlin. También aprendí a implementar interfaces de usuario y a trabajar con bases de datos en Android.",
+        ],
+        credential: {
+          id: "ETK UEM LUB",
+          link: "https://learndigital.withgoogle.com/link/1nur091p2ww",
+        },
+      },
+    ],
+  },
+  {
+    company: "Coursera",
+    date: "2020",
+    logo: "/companies/coursera.jpeg",
+    items: [
+      {
+        date: "nov 2020",
+        title: "Programación en Python I",
+        description: [
+          "Aprendí los fundamentos de la programación en Python y cómo aplicarlos en la resolución de problemas. También aprendí a trabajar con estructuras de datos y a implementar algoritmos en Python.",
+        ],
+        credential: {
+          id: "TLLTAKHH6Q5F",
+          link: "https://www.coursera.org/account/accomplishments/verify/TLLTAKHH6Q5F",
+        },
+      },
+    ],
+  },
+];
+---
+
+<SectionCV title="Certificados">
+  {
+    certificactions.map((certificaction, index) => (
+      <div
+        class={`${certificactions.length == index + 1 ? "" : "border-b"} grid grid-flow-col gap-6 mb-6 pb-6`}
+      >
+        <div class="w-8 h-8 md:w-24 md:h-24 bg-slate-300">
+          <img
+            src={certificaction.logo}
+            alt={certificaction.company}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="border-l" />
+        <div class="w-full">
+          <h3 class="text-xl font-bold mb-3 uppercase">
+            {certificaction.company}{" "}
+            <span class="font-semibold text-sm">({certificaction.date})</span>
+          </h3>
+          <div>
+            {certificaction.items.map((item, index) => (
+              <div class="mb-6">
+                <h4 class="text-lg font-bold mb-0">{item.title}</h4>
+                <p class="text-sm font-semibold text-slate-500 mb-3">
+                  {item.date}
+                </p>
+                <div class="space-y-3 mb-4">
+                  {item.description.map((description, index) => (
+                    <p>{description}</p>
+                  ))}
+                </div>
+                {item.credential && (
+                  <div class="space-y-2">
+                    <div> Id de la credencial: {item.credential.id}</div>
+                    <div>
+                      <a
+                        href={item.credential.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-white text-slate-500 px-3 py-1 text-sm rounded-lg hover:bg-slate-600 border border-slate-500 hover:text-white transition-colors w-auto"
+                      >
+                        Ver Certificado
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</SectionCV>

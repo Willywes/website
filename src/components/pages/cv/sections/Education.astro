@@ -1,0 +1,67 @@
+---
+import SectionCV from "../CVSection.astro";
+
+const experiences = [
+  {
+    company: "Duoc UC",
+    date: "mar 2015 - jun 2019",
+    logo: "/companies/duoc.jpeg",
+    items: [
+      {
+        date: "mar 2015 - jun 2019",
+        title: "Ingeniería en Informática",
+        description: [
+          "La mayor parte de mi formación como ingeniero en informática se enfocó en el desarrollo de software y la gestión de proyectos de tecnología de la información.",
+        ],
+      },
+      {
+        date: "mar 2015 - jun 2017",
+        title: "Analista Programador Computacional",
+        description: [
+          "Durante los primeros años de mi formación académica, reforce los fundamentos de la programación y la lógica de programación, así como el desarrollo de aplicaciones de software.",
+        ],
+      },
+    ],
+  },
+];
+---
+
+<SectionCV title="Formación">
+  {
+    experiences.map((experience, index) => (
+      <div
+        class={`${experiences.length == index + 1 ? "" : "border-b"} grid grid-flow-col gap-6 mb-6 pb-6`}
+      >
+        <div class="w-8 h-8 md:w-24 md:h-24 bg-slate-300">
+          <img
+            src={experience.logo}
+            alt={experience.company}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="border-l" />
+        <div>
+          <h3 class="text-xl font-bold mb-3 uppercase">
+            {experience.company}{" "}
+            <span class="font-semibold text-sm">({experience.date})</span>
+          </h3>
+          <div>
+            {experience.items.map((item, index) => (
+              <div class="mb-6">
+                <h4 class="text-lg font-bold mb-0">{item.title}</h4>
+                <p class="text-sm font-semibold text-slate-500 mb-3">
+                  {item.date}
+                </p>
+                <div class="space-y-2">
+                  {item.description.map((description, index) => (
+                    <p>{description}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</SectionCV>
