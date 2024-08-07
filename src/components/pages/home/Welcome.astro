@@ -3,6 +3,7 @@ import LinkButton from "../../LinkButton.astro";
 import GithubIcon from "../../icons/GithubIcon.astro";
 import LinkedInIcon from "../../icons/LinkedInIcon.astro";
 import XIcon from "../../icons/XIcon.astro";
+import CVIcon from "../../icons/CVIcon.astro";
 ---
 
 <section id="home">
@@ -11,36 +12,47 @@ import XIcon from "../../icons/XIcon.astro";
   >
     <div class="flex flex-col gap-12">
       <h1 class="text-5xl sm:text-7xl font-bold text-center md:text-left">
-        Hi <span class="animate-handWave inline-block">🖖</span>, I'm <span
+        <!-- Hi <span class="animate-handWave inline-block">🖖</span>, I'm <span
           class="text-yellow-500">Alejandro</span
-        ><br /> a full stack web developer.
+        ><br /> a full stack web developer. -->
+        Hola <span class="animate-handWave inline-block">🖖</span>, soy <span
+          class="text-yellow-500">Alejandro</span
+        >
+        <br /> un desarrollador web full stack.
       </h1>
       <div class="flex flex-col gap-3">
         <p class="text-lg">
-          I'm a full stack web developer with a passion for building beautiful,
+          <!-- I'm a full stack web developer with a passion for building beautiful,
           functional, and accessible websites. I'm currently working at my own
-          projects and freelancing.
+          projects and freelancing. -->
+          Tengo una profunda pasión por crear sitios web accesibles, atractivos y
+          funcionales. Actualmente, estoy dedicando mi tiempo a proyectos personales
+          y ofreciendo mis servicios como freelancer.
         </p>
         <p class="text-lg">
-          If you believe we can work together, feel free to contact me.
+          <!-- If you believe we can work together, feel free to contact me. -->
+          Si crees que podemos trabajar juntos, no dudes en contactarme.
         </p>
       </div>
-      <div class="flex gap-3 md:gap-4">
+      <div class="flex gap-3 md:gap-4 fill-white">
         <LinkButton
           href="https://www.linkedin.com/in/willywes/"
-          title="Contact me on LinkedIn"
+          title="Contáctame en LinkedIn"
         >
           <LinkedInIcon />
           LinkedIn
         </LinkButton>
         <LinkButton
           href="https://github.com/willywes"
-          title="Contact me on Github"
+          title="Contáctame en Github"
         >
           <GithubIcon /> Github
         </LinkButton>
-        <LinkButton href="https://x.com/willywes_" title="Contact me on X">
+        <!-- <LinkButton href="https://x.com/willywes_" title="Contáctame en X">
           <XIcon />
+        </LinkButton> -->
+        <LinkButton href="/cv" title="Mi Curriculum Vitae">
+          <CVIcon /> Curriculum
         </LinkButton>
       </div>
     </div>

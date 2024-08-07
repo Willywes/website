@@ -1,0 +1,21 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+
+// I'm a full stack web developer with a passion for building beautiful, functional, and accessible websites
+---
+
+<meta charset="UTF-8" />
+<meta
+  name="description"
+  content={description ??
+    "Soy un desarrollador con 13 años en el desarrollo de páginas y aplicaciones web, enfocándome en aplicaciones de gestión, comercio electrónico y portales web."}
+/>
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title ?? "Alejandro Isla | Full Stack Developer"}</title>
